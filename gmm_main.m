@@ -5,13 +5,16 @@
 % @date: 08/29/2018
 % @email: ww6p9@mail.missouri.edu
 % @University of Missouri-Columbia
+% This code is only for demonstrating ideas, please visit 
+% https://ieeexplore.ieee.org/abstract/document/8858874
+% for more details of the paper.
 
 close all;
 clear;clc;
 
 % import data
 addpath(genpath(pwd));
-all_data = importdata('weather_1h.dat'); N = size(all_data,1); piece=5;
+all_data = importdata('data/weather_1h.dat'); N = size(all_data,1); piece=5;
 % use 1/5 of data to find prototype, use the rest as streaming data
 data = all_data(1:round(N / piece),:);
 stream = all_data(round(N / piece)+1:N,:);
